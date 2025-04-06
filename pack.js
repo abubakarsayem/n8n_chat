@@ -10,9 +10,7 @@
     fontElement.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap';
     document.head.appendChild(fontElement);
 
-
-  
-  // Apply widget styles with completely different design approach
+    // Apply widget styles with completely different design approach
     const widgetStyles = document.createElement('style');
     widgetStyles.textContent = `
         .chat-assist-widget {
@@ -276,21 +274,18 @@
             }
         }
 
-        
-        
-        
-        
-     .chat-assist-widget .chat-controls {
-     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    background: var(--chat-color-surface);
-    border-top: 1px solid var(--chat-color-light);
-    gap: 10px;
-}
+        .chat-assist-widget .chat-controls {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: var(--chat-color-surface);
+            border-top: 1px solid var(--chat-color-light);
+            gap: 10px;
+            position: relative;
+        }
 
-.chat-assist-widget .chat-textarea {
+        .chat-assist-widget .chat-textarea {
             flex: 1;
             padding: 14px 16px;
             border: 1px solid var(--chat-color-light);
@@ -304,6 +299,7 @@
             max-height: 120px;
             min-height: 48px;
             transition: var(--chat-transition);
+            margin-right: 60px;
         }
 
         .chat-assist-widget .chat-textarea:focus {
@@ -316,78 +312,29 @@
             color: var(--chat-color-text-light);
         }
 
-        .chat-assist-widget .chat-controls {
-    display: flex;
-    align-items: center; /* This vertically centers all child elements */
-    justify-content: center; /* This horizontally centers all child elements */
-    padding: 16px;
-    background: var(--chat-color-surface);
-    border-top: 1px solid var(--chat-color-light);
-    gap: 10px;
-    position: relative; /* Add this if you want absolute positioning for the button */
-}
-
-.chat-assist-widget .chat-controls {
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    background: var(--chat-color-surface);
-    border-top: 1px solid var(--chat-color-light);
-    gap: 10px;
-    /* Remove position: relative if not needed for other elements */
-}
-
-.chat-assist-widget .chat-textarea {
-    flex: 1;
-    padding: 14px 16px;
-    border: 1px solid var(--chat-color-light);
-    border-radius: var(--chat-radius-md);
-    background: var(--chat-color-surface);
-    color: var(--chat-color-text);
-    resize: none;
-    font-family: inherit;
-    font-size: 14px;
-    line-height: 1.5;
-    max-height: 120px;
-    min-height: 48px;
-    transition: var(--chat-transition);
-    /* Add margin-right to create space for the button */
-    margin-right: 60px; /* Adjust based on button width + desired spacing */
-}
-
-.chat-assist-widget .chat-submit {
-    background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
-    color: white;
-    border: none;
-    border-radius: var(--chat-radius-md);
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    transition: var(--chat-transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--chat-shadow-sm);
-    flex-shrink: 0;
-    /* Position it absolutely to the right of the input */
-    position: absolute;
-    right: 16px;
-    /* Remove any transform if previously added */
-    transform: none;
-}
+        .chat-assist-widget .chat-submit {
+            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
+            color: white;
+            border: none;
+            border-radius: var(--chat-radius-md);
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            transition: var(--chat-transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--chat-shadow-sm);
+            flex-shrink: 0;
+            position: absolute;
+            right: 16px;
+            transform: none;
+        }
 
         .chat-assist-widget .chat-submit:hover {
             transform: scale(1.05);
             box-shadow: var(--chat-shadow-md);
-        }   
-        
-        
-        
-  
-
-
-
-        
+        }
 
         .chat-assist-widget .chat-submit svg {
             width: 22px;
@@ -409,7 +356,6 @@
             display: flex;
             align-items: center;
             padding: 0 20px 0 16px;
-            
         }
 
         .chat-assist-widget .chat-launcher.right-side {
@@ -435,8 +381,6 @@
             font-size: 15px;
             white-space: nowrap;
         }
-
-        
 
         .chat-assist-widget .suggested-questions {
             display: flex;
@@ -477,106 +421,7 @@
             color: var(--chat-color-secondary);
             text-decoration: underline;
         }
-
-        .chat-assist-widget .user-registration {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 24px;
-            text-align: center;
-            width: 100%;
-            max-width: 320px;
-            display: none;
-        }
-
-        .chat-assist-widget .user-registration.active {
-            display: block;
-        }
-
-        .chat-assist-widget .registration-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--chat-color-text);
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .chat-assist-widget .registration-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .chat-assist-widget .form-field {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            text-align: left;
-        }
-
-        .chat-assist-widget .form-label {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--chat-color-text);
-        }
-
-        .chat-assist-widget .form-input {
-            padding: 12px 14px;
-            border: 1px solid var(--chat-color-border);
-            border-radius: var(--chat-radius-md);
-            font-family: inherit;
-            font-size: 14px;
-            transition: var(--chat-transition);
-        }
-
-        .chat-assist-widget .form-input:focus {
-            outline: none;
-            border-color: var(--chat-color-primary);
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-        }
-
-        .chat-assist-widget .form-input.error {
-            border-color: #ef4444;
-        }
-
-        .chat-assist-widget .error-text {
-            font-size: 12px;
-            color: #ef4444;
-            margin-top: 2px;
-        }
-
-        .chat-assist-widget .submit-registration {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 14px 20px;
-            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
-            color: white;
-            border: none;
-            border-radius: var(--chat-radius-md);
-            cursor: pointer;
-            font-size: 15px;
-            transition: var(--chat-transition);
-            font-weight: 600;
-            font-family: inherit;
-            box-shadow: var(--chat-shadow-md);
-        }
-
-        .chat-assist-widget .submit-registration:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--chat-shadow-lg);
-        }
-
-        .chat-assist-widget .submit-registration:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
     `;
-  
   
     document.head.appendChild(widgetStyles);
 
@@ -655,22 +500,6 @@
             </button>
             <p class="chat-response-time">${settings.branding.responseTimeText}</p>
         </div>
-        <div class="user-registration">
-            <h2 class="registration-title">Please enter your details to start chatting</h2>
-            <form class="registration-form">
-                <div class="form-field">
-                    <label class="form-label" for="chat-user-name">Name</label>
-                    <input type="text" id="chat-user-name" class="form-input" placeholder="Your name" required>
-                    <div class="error-text" id="name-error"></div>
-                </div>
-                <div class="form-field">
-                    <label class="form-label" for="chat-user-email">Email</label>
-                    <input type="email" id="chat-user-email" class="form-input" placeholder="Your email address" required>
-                    <div class="error-text" id="email-error"></div>
-                </div>
-                <button type="submit" class="submit-registration">Continue to Chat</button>
-            </form>
-        </div>
     `;
 
     // Create chat interface without duplicating the header
@@ -686,7 +515,6 @@
                     </svg>
                 </button>
             </div>
-            
         </div>
     `;
     
@@ -712,15 +540,7 @@
     const messagesContainer = chatWindow.querySelector('.chat-messages');
     const messageTextarea = chatWindow.querySelector('.chat-textarea');
     const sendButton = chatWindow.querySelector('.chat-submit');
-    
-    // Registration form elements
-    const registrationForm = chatWindow.querySelector('.registration-form');
-    const userRegistration = chatWindow.querySelector('.user-registration');
     const chatWelcome = chatWindow.querySelector('.chat-welcome');
-    const nameInput = chatWindow.querySelector('#chat-user-name');
-    const emailInput = chatWindow.querySelector('#chat-user-email');
-    const nameError = chatWindow.querySelector('#name-error');
-    const emailError = chatWindow.querySelector('#email-error');
 
     // Helper function to generate unique session ID
     function createSessionId() {
@@ -750,121 +570,39 @@
         });
     }
 
-    // Show registration form
-    function showRegistrationForm() {
-        chatWelcome.style.display = 'none';
-        userRegistration.classList.add('active');
-    }
-
-    // Validate email format
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    // Handle registration form submission
-    async function handleRegistration(event) {
-        event.preventDefault();
-        
-        // Reset error messages
-        nameError.textContent = '';
-        emailError.textContent = '';
-        nameInput.classList.remove('error');
-        emailInput.classList.remove('error');
-        
-        // Get values
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        
-        // Validate
-        let isValid = true;
-        
-        if (!name) {
-            nameError.textContent = 'Please enter your name';
-            nameInput.classList.add('error');
-            isValid = false;
-        }
-        
-        if (!email) {
-            emailError.textContent = 'Please enter your email';
-            emailInput.classList.add('error');
-            isValid = false;
-        } else if (!isValidEmail(email)) {
-            emailError.textContent = 'Please enter a valid email address';
-            emailInput.classList.add('error');
-            isValid = false;
-        }
-        
-        if (!isValid) return;
-        
-        // Initialize conversation with user data
+    // Start chat directly without registration
+    function startChat() {
         conversationId = createSessionId();
+        chatWelcome.style.display = 'none';
+        chatBody.classList.add('active');
         
-        // First, load the session
+        // Show typing indicator
+        const typingIndicator = createTypingIndicator();
+        messagesContainer.appendChild(typingIndicator);
+        
+        // Load session
         const sessionData = [{
             action: "loadPreviousSession",
             sessionId: conversationId,
-            route: settings.webhook.route,
-            metadata: {
-                userId: email,
-                userName: name
-            }
+            route: settings.webhook.route
         }];
 
-        try {
-            // Hide registration form, show chat interface
-            userRegistration.classList.remove('active');
-            chatBody.classList.add('active');
-            
-            // Show typing indicator
-            const typingIndicator = createTypingIndicator();
-            messagesContainer.appendChild(typingIndicator);
-            
-            // Load session
-            const sessionResponse = await fetch(settings.webhook.url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(sessionData)
-            });
-            
-            const sessionResponseData = await sessionResponse.json();
-            
-            // Send user info as first message
-            const userInfoMessage = `Name: ${name}\nEmail: ${email}`;
-            
-            const userInfoData = {
-                action: "sendMessage",
-                sessionId: conversationId,
-                route: settings.webhook.route,
-                chatInput: userInfoMessage,
-                metadata: {
-                    userId: email,
-                    userName: name,
-                    isUserInfo: true
-                }
-            };
-            
-            // Send user info
-            const userInfoResponse = await fetch(settings.webhook.url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userInfoData)
-            });
-            
-            const userInfoResponseData = await userInfoResponse.json();
-            
+        fetch(settings.webhook.url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sessionData)
+        })
+        .then(response => response.json())
+        .then(data => {
             // Remove typing indicator
             messagesContainer.removeChild(typingIndicator);
             
             // Display initial bot message with clickable links
             const botMessage = document.createElement('div');
             botMessage.className = 'chat-bubble bot-bubble';
-            const messageText = Array.isArray(userInfoResponseData) ? 
-                userInfoResponseData[0].output : userInfoResponseData.output;
+            const messageText = Array.isArray(data) ? data[0].output : data.output;
             botMessage.innerHTML = linkifyText(messageText);
             messagesContainer.appendChild(botMessage);
             
@@ -891,8 +629,9 @@
             }
             
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        } catch (error) {
-            console.error('Registration error:', error);
+        })
+        .catch(error => {
+            console.error('Error starting chat:', error);
             
             // Remove typing indicator if it exists
             const indicator = messagesContainer.querySelector('.typing-indicator');
@@ -906,7 +645,7 @@
             errorMessage.textContent = "Sorry, I couldn't connect to the server. Please try again later.";
             messagesContainer.appendChild(errorMessage);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
+        });
     }
 
     // Send a message to the webhook
@@ -915,19 +654,11 @@
         
         isWaitingForResponse = true;
         
-        // Get user info if available
-        const email = nameInput ? nameInput.value.trim() : "";
-        const name = emailInput ? emailInput.value.trim() : "";
-        
         const requestData = {
             action: "sendMessage",
             sessionId: conversationId,
             route: settings.webhook.route,
-            chatInput: messageText,
-            metadata: {
-                userId: email,
-                userName: name
-            }
+            chatInput: messageText
         };
 
         // Display user message
@@ -986,8 +717,7 @@
     }
 
     // Event listeners
-    startChatButton.addEventListener('click', showRegistrationForm);
-    registrationForm.addEventListener('submit', handleRegistration);
+    startChatButton.addEventListener('click', startChat);
     
     sendButton.addEventListener('click', () => {
         const messageText = messageTextarea.value.trim();
