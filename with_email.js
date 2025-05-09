@@ -1011,39 +1011,6 @@
             }
         }
     });
-
-
-
-
-    <button id="bookCallBtn" style="position: absolute; bottom: 60px; right: 20px; background-color: #4CAF50; color: white; border: none; padding: 10px 15px; border-radius: 5px; display: flex; align-items: center; gap: 5px; cursor: pointer;">
-  📅 Book a call
-</button>
-
-<script>
-  document.getElementById("bookCallBtn").addEventListener("click", function () {
-    const message = "I want to book a meeting";
-
-    // Simulate sending the message
-    const chatBox = document.querySelector("#chatBox"); // Adjust selector if needed
-    if (chatBox) {
-      const msgElem = document.createElement("div");
-      msgElem.textContent = message;
-      msgElem.style.margin = "10px";
-      msgElem.style.padding = "8px";
-      msgElem.style.background = "#f1f1f1";
-      msgElem.style.borderRadius = "5px";
-      chatBox.appendChild(msgElem);
-    }
-
-    this.style.display = "none";
-  });
-</script>
-
-
-
-
-
-
     
     
     launchButton.addEventListener('click', () => {
