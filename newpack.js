@@ -71,7 +71,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
+            background: var(--chat-color-primary);
             color: white;
             position: relative;
         }
@@ -142,7 +142,7 @@
             gap: 10px;
             width: 100%;
             padding: 14px 20px;
-            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
+            background: var(--chat-color-primary);
             color: white;
             border: none;
             border-radius: var(--chat-radius-md);
@@ -213,7 +213,7 @@
         }
 
         .chat-assist-widget .chat-bubble.user-bubble {
-            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
+            background: var(--chat-color-primary);
             color: white;
             align-self: flex-end;
             border-bottom-right-radius: 4px;
@@ -313,7 +313,7 @@
         }
 
         .chat-assist-widget .chat-submit {
-            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
+            background: var(--chat-color-primary);
             color: white;
             border: none;
             border-radius: var(--chat-radius-md);
@@ -346,7 +346,7 @@
             bottom: 20px;
             height: 56px;
             border-radius: var(--chat-radius-full);
-            background: linear-gradient(135deg, var(--chat-color-primary) 0%, var(--chat-color-secondary) 100%);
+            background: var(--chat-color-primary);
             color: white;
             border: none;
             cursor: pointer;
