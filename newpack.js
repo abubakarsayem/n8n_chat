@@ -213,7 +213,7 @@
         }
 
         .chat-assist-widget .chat-bubble.user-bubble {
-            background: var(--chat-color-primary);
+            background: var(--chat-color-primary) !important;
             color: white;
             align-self: flex-end;
             border-bottom-right-radius: 4px;
